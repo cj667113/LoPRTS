@@ -9,9 +9,9 @@ Included in this project is the custom PCB boards I designed, temperature.py whi
 For the PBC board, you can use a linear voltage regulator with the trade off of effeciency to the batteries. I ran the boards on 4-D batteries in parallel and in series to get a battery of 26,000 mah at 3V. I concluded that if the ESP32 took 4 seconds to get through the code and report the data and then we placed the board in deep sleep for 15 minutes then:
 
 250ma (peak current)*(4/(900+4))
-250ma*(.004424)=1.106ma
-1.106+1 (deep sleep current)=2.106ma
-26,000/2.106=12,345 hours
-12,345 * 70% (efficency)= 8,642 hours or 360 days on batteries
+<p>250ma*(.004424)=1.106ma
+<p>1.106+1 (deep sleep current)=2.106ma
+<p>26,000/2.106=12,345 hours
+<p>12,345 * 70% (efficency)= 8,642 hours or 360 days on batteries
 
 **Note that Energizer rates their D-Batteries at 20,000mah @ 25ma typical draw, applying this, then the battery life may be even longer than 360 days. Also note, that when using LD1117-3.3 TO-220 linear voltage regulator, the component introduces an added 5ma draw.**
