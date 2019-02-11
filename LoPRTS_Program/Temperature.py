@@ -21,8 +21,7 @@ def wlan():
     global sta_if
     sta_if=network.WLAN(network.STA_IF)
     sta_if.active(True)
-    #sta_if.connect('a-itswireless','1234567890')
-    sta_if.connect('Christopher_M_Johnston','OdinRoot')
+    sta_if.connect('SSID','Password')
 try:
     if machine.reset_cause() == machine.DEEPSLEEP_RESET:
         print("Woke From Deepsleep")
