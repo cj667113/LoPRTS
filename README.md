@@ -17,4 +17,4 @@ For the PBC board, you can use a linear voltage regulator with the trade off of 
 
 **Note that Energizer rates their D-Batteries at 20,000mah @ 25ma typical draw, applying this, then the battery life may be even longer than 360 days. Also note, that when using LD1117-3.3 TO-220 linear voltage regulator, the component introduces an added 5ma draw.**
 
-![LoPRT PwBoard](github.com/cj667113/LoPRTS/blob/master/LoPRTS_Photos/IMG_20190122_004254437.jpg?raw=true)
+![LoPRT PwBoard](https://github.com/cj667113/LoPRTS/blob/master/LoPRTS_Photos/IMG_20190122_004254437.jpg?raw=true)
