@@ -1,6 +1,6 @@
 # LoPRTS
 Low Power Remote Temperature Sensor
-![LoPRT Board] (/LoPRTS_Photos/LoPRTS_board.png)
+![LoPRT Board](https://github.com/cj667113/LoPRTS/blob/master/LoPRTS_Photos/LoPRTS_board.png?raw=true)
 
 This project was designed with the ESP32-WROOM module with Micropython. Essentially, this project allows for Low Powered Remote Temperature Sensor to be used in conjection with PRTG. By installing an HTTP Push Device in PRTG, you will be allowed to point and push data to the sensor. This will allow us to put the ESP32 into deep sleep to conserve battery power, and allow the device to wake up and report a messurement without worrying about IP addressing and reduce the amount of time the ESP32 has to stay awake.
 
