@@ -6,6 +6,19 @@ This project was designed with the ESP32-WROOM module with Micropython. Essentia
 
 Included in this project is the custom PCB boards I designed, temperature.py which is the code used to report the measurements, and the STL files for the case.
 
+# Micropython
+I am using micropython version esp32-20180511-v1.9.4.bin, v.10 has some changes with the touch sensor waking the board. I need to go back and rework the program a little when I find the time.
+
+I used Esptools.py to connect to the board to erase the board and flash the firmware to it. Hold Key 2 down while pressing Key 1 to enter download mode.
+
+I used Ampy to put the temperature.py code as boot.py on the board. After flashing the board, press Key 1 to reset the board, before uploading with Ampy.
+
+# Wake-up Control Pin
+I included P2 as a Touch Pin to force wake the micropython controller. In the designs of my case I used a small piece of copper plate that I had left over (https://www.amazon.com/Lanpu-Raspberry-Heatsink-Aluminum-cooling/dp/B079K43ZTZ/ref=sr_1_6?crid=2UJHM4N1H8GJ3&keywords=raspberry+pi+heatsink&qid=1551036431&s=gateway&sprefix=raspberry+pi+hea%2Caps%2C152&sr=8-6) to fit into the case.
+
+# Power On/Off & Deepsleep
+Note that the LoPRTS system works as soon as you attach a power supply, there is no off function, rather there is only deepsleep. That means there has to be reliable WiFi connection or else the system will just search for a WiFi point. I notice that this might be an issue so I am going to update the code to go to deepsleep after I have time. 
+
 # Battery Life
 For the PBC board, you can use a linear voltage regulator with the trade off of effeciency to the batteries. I ran the boards on 4-D batteries in parallel and in series to get a battery of 26,000 mah at 3V. I concluded that if the ESP32 took 4 seconds to get through the code and report the data and then we placed the board in deep sleep for 15 minutes then:
 
@@ -17,6 +30,7 @@ For the PBC board, you can use a linear voltage regulator with the trade off of 
 
 **Note that Energizer rates their D-Batteries at 20,000mah @ 25ma typical draw, applying this, then the battery life may be even longer than 360 days. Also note, that when using LD1117-3.3 TO-220 linear voltage regulator, the component introduces an added 5ma draw.**
 
-![LoPRT PwBoard](https://github.com/cj667113/LoPRTS/blob/master/LoPRTS_Photos/IMG_20190122_004254437.jpg?raw=true)
+![LoPRTS PwBoard](https://github.com/cj667113/LoPRTS/blob/master/LoPRTS_Photos/IMG_20190122_004254437.jpg?raw=true)
 
-![LoPRT Total](https://github.com/cj667113/LoPRTS/blob/master/LoPRTS_Photos/IMG_20190122_004202089.jpg?raw=true)
+![LoPRTS Total](https://github.com/cj667113/LoPRTS/blob/master/LoPRTS_Photos/IMG_20190122_004202089.jpg?raw=true)
+![LoPRTS_Full](https://github.com/cj667113/LoPRTS/blob/master/LoPRTS_Photos/IMG_20190118_013232048.jpg?raw=true)
