@@ -39,3 +39,5 @@ For the PBC board, you can use a linear voltage regulator with the trade off of 
 ![LoPRTS Total](https://github.com/cj667113/LoPRTS/blob/master/LoPRTS_Photos/IMG_20190122_004202089.jpg?raw=true)
 
 ![LoPRTS_Full](https://github.com/cj667113/LoPRTS/blob/master/LoPRTS_Photos/IMG_20190118_013232048.jpg?raw=true)
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TZJP4R4BUD6JA&currency_code=USD&source=url)
