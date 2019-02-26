@@ -1,4 +1,4 @@
-# LoPRTS  [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TZJP4R4BUD6JA&currency_code=USD&source=url)
+# LoPRTS  <p align="center"> [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TZJP4R4BUD6JA&currency_code=USD&source=url)</p>
 
 Low Power Remote Temperature Sensor
 ![LoPRT Board](https://github.com/cj667113/LoPRTS/blob/master/LoPRTS_Photos/LoPRTS_board_1.png?raw=true)
