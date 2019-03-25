@@ -11,6 +11,7 @@ Included in this project is the custom PCB boards I designed, temperature.py whi
 <b>Hardware:</b>
 1. Removed linear voltage regulator to promote ineffiencies, cost and reduce complexities.
 2. Introduced a connection from the battery to ADC pin on the ESP32 to monitor battery life.
+3. Case Design: Added two bars to sit across the batteries to stablize them inside of the case. 
 
 <b>Software:</b>
 1. LoPRTS will put itself in deep sleep after 9 seconds. This removes ineffiencies on the battery if the access point goes down or if the program gets caught in a loop for unexpected reasons.
