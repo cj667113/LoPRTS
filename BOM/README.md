@@ -11,8 +11,6 @@ USB-Serial Programer: https://www.amazon.com/gp/product/B07G2256WK/ref=ppx_yo_dt
 
 LEDs: https://www.amazon.com/gp/product/B01CUGA380/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1
 
-Linear Voltage Regulator: https://www.amazon.com/gp/product/B01N5CNAMX/ref=ppx_yo_dt_b_asin_title_o03_s00?ie=UTF8&psc=1
-
 Resistors: https://www.amazon.com/gp/product/B00VXTANM2/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1
 
 Male-Female Jumper Wires: https://www.amazon.com/gp/product/B01L5ULRUA/ref=ppx_yo_dt_b_asin_title_o03_s00?ie=UTF8&psc=1
