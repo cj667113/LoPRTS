@@ -7,6 +7,14 @@ This project was designed with the ESP32-WROOM module with Micropython. Essentia
 
 Included in this project is the custom PCB boards I designed, temperature.py which is the code used to report the measurements, and the STL files for the case.
 
+# LoPRTS V1.2-Current Changes
+<b>Hardware:</b>
+1. Removed linear voltage regulator to promote ineffiencies, cost and reduce complexities.
+2. Introduced a connection from the battery to ADC pin on the ESP32 to monitor battery life.
+<b>Software:</b>
+1. LoPRTS will put itself in deep sleep after 9 seconds. This removes ineffiencies on the battery if the access point goes down or if the program gets caught in a loop for unexpected reasons.
+2. LOPRTS will monitor battery life via ADC pin.
+
 # Micropython
 http://micropython.org/download
 
@@ -33,7 +41,7 @@ For the PBC board, you can use a linear voltage regulator with the trade off of 
 <p>26,000/2.106=12,345 hours
 <p>12,345 * 70% (efficency)= 8,642 hours or 360 days on batteries
 
-**Note that Energizer rates their D-Batteries at 20,000mah @ 25ma typical draw, applying this, then the battery life may be even longer than 360 days. Also note, that when using LD1117-3.3 TO-220 linear voltage regulator, the component introduces an added 5ma draw.**
+**Note that Energizer rates their D-Batteries at 20,000mah @ 25ma typical draw, applying this, then the battery life may be even longer than 360 days. **
 
 ![LoPRTS PwBoard](https://github.com/cj667113/LoPRTS/blob/master/LoPRTS_Photos/IMG_20190122_004254437.jpg?raw=true)
 
