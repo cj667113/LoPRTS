@@ -45,6 +45,14 @@ For the PBC board, you can use a linear voltage regulator with the trade off of 
 
 **Note that Energizer rates their D-Batteries at 20,000mah @ 25ma typical draw, applying this, then the battery life may be even longer than 360 days. **
 
+# PRTG Integration
+
+Once you download and setup PRTG, you can install a HTTP Push Data Sensor, so that the ESP32 can send Temperature and Voltage statuses to PRTG. The following is what my graph looks like:
+
+# Fully Assembled
+
+![PRTG_Integration](https://github.com/cj667113/LoPRTS/blob/master/LoPRTS_Photos/graph.png?raw=true)
+
 ![LoPRTS PwBoard](https://github.com/cj667113/LoPRTS/blob/master/LoPRTS_Photos/IMG_20190122_004254437.jpg?raw=true)
 
 ![LoPRTS Total](https://github.com/cj667113/LoPRTS/blob/master/LoPRTS_Photos/IMG_20190122_004202089.jpg?raw=true)
