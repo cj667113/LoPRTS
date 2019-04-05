@@ -52,8 +52,8 @@ Once you download and setup PRTG, you can install a HTTP Push Data Sensor, so th
 ![PRTG_Integration](https://github.com/cj667113/LoPRTS/blob/master/LoPRTS_Photos/graph.png?raw=true)
 
 # Fully Assembled
-<img src="https://github.com/cj667113/LoPRTS/blob/master/LoPRTS_Photos/blue.jpg" width="50%">
-<img src="https://github.com/cj667113/LoPRTS/blob/master/LoPRTS_Photos/green.jpg" width="50%">
+<img src="https://github.com/cj667113/LoPRTS/blob/master/LoPRTS_Photos/blue.jpg">
+<img src="https://github.com/cj667113/LoPRTS/blob/master/LoPRTS_Photos/green.jpg">
 
 ![LoPRTS Total](https://github.com/cj667113/LoPRTS/blob/master/LoPRTS_Photos/batt.jpg?raw=true)
 
