@@ -10,7 +10,7 @@ import ubinascii
 import ntptime
 import usgota
 from umqtt_simple import MQTTClient
-mqtt_server = 'cmj1390.host'
+mqtt_server = 'host'
 machine.freq(80000000)
 esp.osdebug(None)
 touch=machine.TouchPad(machine.Pin(33))
@@ -35,7 +35,7 @@ def wlan():
     global sta_if
     sta_if=network.WLAN(network.STA_IF)
     sta_if.active(True)
-    sta_if.connect('Christopher_M_Johnston','OdinRoot')
+    sta_if.connect('','')
 def connect_and_subscribe(topic,data):
     c = MQTTClient(client_id, mqtt_server,user='',password='')
     c.connect()
