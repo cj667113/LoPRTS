@@ -34,7 +34,7 @@ def setup():
         print('Loading Setup')
         config=open('setup.txt','r')
         config=config.readline()
-        config.split('|')
+        config=config.split('|')
         SSID=config[0]
         SSID_password=config[1]
         mqtt_server=config[2]
