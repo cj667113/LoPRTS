@@ -30,9 +30,9 @@ def setup():
     global user
     global password
     try:
-        uos.stat('setup.conf')
+        uos.stat('setup.txt')
         print('Loading Setup')
-        config=open('setup.conf','r')
+        config=open('setup.txt','r')
         config=config.readline()
         config.split(',')
         SSID=config[0]
