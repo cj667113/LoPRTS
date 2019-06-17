@@ -60,6 +60,7 @@ def connect_and_subscribe(topic,data):
     c.connect()
     c.publish(topic, data)
     c.disconnect()
+setup()
 try:
     if machine.reset_cause() == machine.DEEPSLEEP_RESET:
         print("Woke From Deepsleep")
