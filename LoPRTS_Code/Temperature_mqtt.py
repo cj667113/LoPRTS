@@ -1,5 +1,6 @@
 import machine
 import os
+import uos
 import time
 import onewire
 import ds18x20
@@ -10,7 +11,6 @@ import ubinascii
 import ntptime
 import usgota
 from umqtt_simple import MQTTClient
-mqtt_server = 'host'
 machine.freq(80000000)
 esp.osdebug(None)
 touch=machine.TouchPad(machine.Pin(33))
@@ -23,6 +23,25 @@ print(os.uname())
 client_id = ubinascii.hexlify(machine.unique_id())
 timer=machine.Timer(-1)
 timer.init(period=120000, mode=machine.Timer.PERIODIC, callback=lambda t:machine.deepsleep(900000))
+def setup():
+    global SSID
+    global SSID_password
+    global mqtt_server
+    global user
+    global password
+    try:
+        uos.stat('setup.conf')
+        print('Loading Setup')
+        config=open('setup.conf','r')
+        config=config.readline()
+        config.split(',')
+        SSID=config[0]
+        SSID_password=config[1]
+        mqtt_server=config[2]
+        user=config[3]
+        password=config[4]
+    except:
+        print('Error: Upload setup.conf')
 def time_get():
     ntptime.settime()
 def voltage_read():
@@ -35,9 +54,9 @@ def wlan():
     global sta_if
     sta_if=network.WLAN(network.STA_IF)
     sta_if.active(True)
-    sta_if.connect('','')
+    sta_if.connect(SSID,SSID_password)
 def connect_and_subscribe(topic,data):
-    c = MQTTClient(client_id, mqtt_server,user='',password='')
+    c = MQTTClient(client_id, mqtt_server,user=user,password=password)
     c.connect()
     c.publish(topic, data)
     c.disconnect()
