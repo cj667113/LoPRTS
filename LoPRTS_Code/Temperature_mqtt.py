@@ -37,7 +37,7 @@ def wlan():
     sta_if.active(True)
     sta_if.connect('Christopher_M_Johnston','OdinRoot')
 def connect_and_subscribe(topic,data):
-    c = MQTTClient(client_id, mqtt_server,user='cj667113',password='OdinRoot')
+    c = MQTTClient(client_id, mqtt_server,user='',password='')
     c.connect()
     c.publish(topic, data)
     c.disconnect()
@@ -59,7 +59,7 @@ try:
                     try:
                         time_get()
                         time.sleep_ms(10)
-                        usgota.update("https://api.github.com/repos/cj667113/LOPRTS/commits?path=LoPRTS_Code/Temperature_mqtt.py")
+                        usgota.update("https://api.github.com/repos/cj667113/LoPRTS/commits?path=LoPRTS_Code/Temperature_mqtt.py")
                         time.sleep_ms(10)
                         print("Going to Deepsleep")
                         break
@@ -89,7 +89,7 @@ try:
                     mac=mac.replace(':','-')
                     ip=sta_if.ifconfig()
                     print(ip)
-                    usgota.update("https://api.github.com/repos/cj667113/LOPRTS/commits?path=LoPRTS_Code/Temperature_mqtt.py")
+                    usgota.update("https://api.github.com/repos/cj667113/LoPRTS/commits?path=LoPRTS_Code/Temperature_mqtt.py")
                     timer=machine.Timer(-1)
                     timer.init(period=15000, mode=machine.Timer.PERIODIC, callback=lambda t:machine.deepsleep(900000))
                     gled.value(1)
