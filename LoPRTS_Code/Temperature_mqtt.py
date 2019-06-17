@@ -22,7 +22,7 @@ adc.atten(adc.ATTN_11DB)
 print(os.uname())
 client_id = ubinascii.hexlify(machine.unique_id())
 timer=machine.Timer(-1)
-timer.init(period=30000, mode=machine.Timer.PERIODIC, callback=lambda t:machine.deepsleep(900000))
+timer.init(period=120000, mode=machine.Timer.PERIODIC, callback=lambda t:machine.deepsleep(900000))
 def time_get():
     ntptime.settime()
 def voltage_read():
@@ -59,6 +59,8 @@ try:
                     try:
                         time_get()
                         time.sleep_ms(10)
+                        usgota.update("https://api.github.com/repos/cj667113/LOPRTS/commits?path=LoPRTS_Code/Temperature_mqtt.py")
+                        time.sleep_ms(10)
                         print("Going to Deepsleep")
                         break
                     except:
@@ -88,6 +90,8 @@ try:
                     ip=sta_if.ifconfig()
                     print(ip)
                     usgota.update("https://api.github.com/repos/cj667113/LOPRTS/commits?path=LoPRTS_Code/Temperature_mqtt.py")
+                    timer=machine.Timer(-1)
+                    timer.init(period=15000, mode=machine.Timer.PERIODIC, callback=lambda t:machine.deepsleep(900000))
                     gled.value(1)
                     bled.value(0)
                     ds.convert_temp()
