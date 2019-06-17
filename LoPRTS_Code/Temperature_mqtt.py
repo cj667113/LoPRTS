@@ -41,7 +41,7 @@ def setup():
         user=config[3]
         password=config[4]
     except:
-        print('Error: Upload setup.conf')
+        print('Error: Upload setup.txt')
 def time_get():
     ntptime.settime()
 def voltage_read():
@@ -54,6 +54,7 @@ def wlan():
     global sta_if
     sta_if=network.WLAN(network.STA_IF)
     sta_if.active(True)
+    print(SSID)
     sta_if.connect(SSID,SSID_password)
 def connect_and_subscribe(topic,data):
     c = MQTTClient(client_id, mqtt_server,user=user,password=password)
@@ -78,16 +79,11 @@ try:
                     print(ip)
                     try:
                         time_get()
-                        time.sleep_ms(10)
                         usgota.update("https://api.github.com/repos/cj667113/LoPRTS/commits?path=LoPRTS_Code/Temperature_mqtt.py")
-                        time.sleep_ms(10)
                         print("Going to Deepsleep")
                         break
                     except:
                         pass
-                else:
-                    time.sleep_ms(10)
-                    pass 
         machine.deepsleep()
     rtc=machine.RTC()
     temp_power = machine.Pin(32,machine.Pin.OUT)
@@ -136,9 +132,6 @@ try:
                     break
                 except:
                     raise
-            else:
-                time.sleep_ms(10)
-                pass
     rled.value(1)
     time.sleep_ms(30)
     temp_power.value(0)
