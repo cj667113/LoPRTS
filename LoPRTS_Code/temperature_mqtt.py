@@ -22,8 +22,6 @@ adc=machine.ADC(adc_pin)
 adc.atten(adc.ATTN_11DB)
 print(os.uname())
 client_id = ubinascii.hexlify(machine.unique_id())
-timer=machine.Timer(-1)
-timer.init(period=60000, mode=machine.Timer.PERIODIC, callback=lambda t:machine.deepsleep(900000))
 def setup():
     global SSID
     global SSID_password
@@ -73,6 +71,8 @@ try:
         wlan()
         while True:
                 if sta_if.isconnected()==True:
+                    timer=machine.Timer(-1)
+                    timer.init(period=60000, mode=machine.Timer.PERIODIC, callback=lambda t:machine.deepsleep(900000))
                     mac=ubinascii.hexlify(network.WLAN().config('mac'),':').decode()
                     mac=mac.replace(':','-')
                     ip=sta_if.ifconfig()
@@ -93,7 +93,9 @@ try:
                         print("Update Error")
                         pass
                         time.sleep_ms(30)
-        machine.deepsleep()
+        machine.deepsleep(30)
+    timer=machine.Timer(-1)
+    timer.init(period=30000, mode=machine.Timer.PERIODIC, callback=lambda t:machine.deepsleep(900000))
     rtc=machine.RTC()
     temp_power = machine.Pin(32,machine.Pin.OUT)
     temp_power.value(1)
@@ -114,8 +116,6 @@ try:
                     mac=mac.replace(':','-')
                     ip=sta_if.ifconfig()
                     print(ip)
-                    gc.collect()
-                    usgota.update("https://api.github.com/repos/cj667113/LoPRTS/commits?path=LoPRTS_Code/compiled/temperature_mqtt.mpy")
                     gled.value(1)
                     bled.value(0)
                     ds.convert_temp()
