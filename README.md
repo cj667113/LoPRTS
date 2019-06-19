@@ -20,7 +20,7 @@ Included in this project is the custom PCB boards I designed, temperature.py whi
 # Micropython
 http://micropython.org/download
 
-I am using micropython version esp32-20180511-v1.9.4.bin, v.10 has some changes with the touch sensor waking the board. I need to go back and rework the program a little when I find the time.
+I am using micropython version esp32-20190619-v1.11-49-g34c04d231.bin.
 
 I used Esptools.py to connect to the board to erase the board and flash the firmware to it. Hold Key 2 down while pressing Key 1 to enter download mode.
 
@@ -45,7 +45,11 @@ For the PBC board, you can use a linear voltage regulator with the trade off of 
 
 **Note that Energizer rates their D-Batteries at 20,000mah @ 25ma typical draw, applying this, then the battery life may be even longer than 360 days. **
 
-# PRTG Integration
+# MQTT Version
+
+You will need to also upload a setup.txt file to the ESP32. Please look at setup_example.txt for the format. This file should take care of all the information that your unique setup will require.
+
+# PRTG Version
 
 Once you download and setup PRTG, you can install a HTTP Push Data Sensor, so that the ESP32 can send Temperature and Voltage statuses to PRTG. The following is what my graph looks like:
 
