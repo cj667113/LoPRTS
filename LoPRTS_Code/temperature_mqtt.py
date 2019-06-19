@@ -23,7 +23,7 @@ adc.atten(adc.ATTN_11DB)
 print(os.uname())
 client_id = ubinascii.hexlify(machine.unique_id())
 timer=machine.Timer(-1)
-timer.init(period=120000, mode=machine.Timer.PERIODIC, callback=lambda t:machine.deepsleep(900000))
+timer.init(period=30000, mode=machine.Timer.PERIODIC, callback=lambda t:machine.deepsleep(900000))
 def setup():
     global SSID
     global SSID_password
