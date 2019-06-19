@@ -1,4 +1,4 @@
-# LoPRTS V1.2 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TZJP4R4BUD6JA&currency_code=USD&source=url)
+# LoPRTS V1.3 - Beta [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TZJP4R4BUD6JA&currency_code=USD&source=url)
 
 Low Power Remote Temperature Sensor
 ![LoPRT Board](https://github.com/cj667113/LoPRTS/blob/master/LoPRTS_Photos/LoPRTS_board_1.png?raw=true)
@@ -7,15 +7,12 @@ This project was designed with the ESP32-WROOM module with Micropython. Essentia
 
 Included in this project is the custom PCB boards I designed, temperature.py which is the code used to report the measurements, and the STL files for the case.
 
-# LoPRTS V1.2-Current Changes
+# LoPRTS V1.3-Current Changes
 <b>Hardware:</b>
-1. Removed linear voltage regulator to promote ineffiencies, cost and reduce complexities.
-2. Introduced a connection from the battery to ADC pin on the ESP32 to monitor battery life.
-3. Case Design: Added two bars to sit across the batteries to stablize them inside of the case. 
+1. No changes... yet 
 
 <b>Software:</b>
-1. LoPRTS will put itself in deep sleep after 9 seconds. This removes ineffiencies on the battery if the access point goes down or if the program gets caught in a loop for unexpected reasons.
-2. LOPRTS will monitor battery life via ADC pin.
+1. MQTT subversion. Included Simple Github OTA Updater (https://github.com/cj667113/simple_github_ota_updater) that will monitor the repository and install new software after each hard-reset.
 
 # Micropython
 http://micropython.org/download
