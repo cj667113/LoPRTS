@@ -91,7 +91,7 @@ try:
                         break
                     except:
                         print("Update Error")
-                        raise
+                        pass
                         time.sleep_ms(30)
         machine.deepsleep()
     rtc=machine.RTC()
