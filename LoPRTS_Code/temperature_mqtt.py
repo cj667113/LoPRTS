@@ -10,6 +10,7 @@ import esp32
 import ubinascii
 import ntptime
 import usgota
+import gc
 from umqtt_simple import MQTTClient
 machine.freq(80000000)
 esp.osdebug(None)
@@ -77,18 +78,20 @@ try:
                     ip=sta_if.ifconfig()
                     print(ip)
                     try:
+                        gc.collect()
                         time_get()
+                        time.sleep_ms(30)
                     except:
                         print("Time Calibration Error")
                         pass
                     try:
-                        usgota.update("https://api.github.com/repos/cj667113/LoPRTS/commits?path=LoPRTS_Code/Temperature_mqtt.py")
+                        gc.collect()
+                        usgota.update("https://api.github.com/repos/cj667113/LoPRTS/commits?path=LoPRTS_Code/compiled/temperature_mqtt.mpy")
+                        time.sleep_ms(30)
+                        break
                     except:
                         print("Update Error")
                         pass
-                else:
-                    time.sleep_ms(10)
-                    pass 
         machine.deepsleep()
     rtc=machine.RTC()
     temp_power = machine.Pin(32,machine.Pin.OUT)
@@ -110,7 +113,8 @@ try:
                     mac=mac.replace(':','-')
                     ip=sta_if.ifconfig()
                     print(ip)
-                    usgota.update("https://api.github.com/repos/cj667113/LoPRTS/commits?path=LoPRTS_Code/Temperature_mqtt.py")
+                    gc.collect()
+                    usgota.update("https://api.github.com/repos/cj667113/LoPRTS/commits?path=LoPRTS_Code/compiled/temperature_mqtt.mpy")
                     gled.value(1)
                     bled.value(0)
                     ds.convert_temp()
@@ -135,9 +139,6 @@ try:
                     break
                 except:
                     raise
-            else:
-                time.sleep_ms(10)
-                pass
     rled.value(1)
     time.sleep_ms(30)
     temp_power.value(0)
