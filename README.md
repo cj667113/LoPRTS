@@ -1,4 +1,4 @@
-# LoPRTS V1.3 - Beta [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TZJP4R4BUD6JA&currency_code=USD&source=url)
+# LoPRTS V1.3 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TZJP4R4BUD6JA&currency_code=USD&source=url)
 
 Low Power Remote Temperature Sensor
 ![LoPRT Board](https://github.com/cj667113/LoPRTS/blob/master/LoPRTS_Photos/LoPRTS_board_1.png?raw=true)
@@ -9,7 +9,7 @@ Included in this project is the custom PCB boards I designed, temperature.py whi
 
 # LoPRTS V1.3-Current Changes
 <b>Hardware:</b>
-1. No changes... yet 
+1. None
 
 <b>Software:</b>
 1. MQTT subversion. Included Simple Github OTA Updater (https://github.com/cj667113/simple_github_ota_updater) that will monitor the repository and install new software after each hard-reset.
