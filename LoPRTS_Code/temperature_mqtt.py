@@ -93,7 +93,6 @@ try:
                     except:
                         print("Update Error")
                         pass
-                        time.sleep_ms(30)
         machine.deepsleep(30)
     timer=machine.Timer(-1)
     timer.init(period=30000, mode=machine.Timer.PERIODIC, callback=lambda t:machine.deepsleep(900000))
@@ -142,7 +141,7 @@ try:
                     time.sleep_ms(30)
                     break
                 except:
-                    raise
+                    pass
     rled.value(1)
     time.sleep_ms(30)
     temp_power.value(0)
