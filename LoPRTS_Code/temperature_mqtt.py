@@ -148,5 +148,4 @@ try:
     temp_power.value(0)
     machine.deepsleep(900000)
 except:
-    raise
-    #machine.deepsleep(900000)
+    machine.deepsleep(900000)
