@@ -11,6 +11,7 @@ import ubinascii
 import ntptime
 import usgota
 import gc
+import ujson
 from umqtt_simple import MQTTClient
 machine.freq(80000000)
 esp.osdebug(None)
@@ -125,17 +126,19 @@ try:
                     for rom in roms:
                         temperature=((float((ds.read_temp(rom))*(1.8))+32)-2)
                     voltage_read()
-                    topic=(mac+'/Temperature')
-                    topic.encode()
-                    print(topic)
                     temperature=str(temperature)
-                    connect_and_subscribe(topic,temperature)
                     vval=str(vval)
-                    topic=(mac+'/Voltage')
+                    topic=(mac)
                     topic.encode()
-                    connect_and_subscribe(topic,vval)
+                    now = time.time()
+                    year, month, day, hour, minute, second, ms, dayinyear = time.localtime(now)
+                    DateTime=str(str(year)+','+str(month)+','+str(day)+','+str(hour)+','+str(minute)+','+str(second))
+                    print(DateTime)
+                    data = {"DateTime":DateTime,"Temperature":temperature,"Voltage":vval}
+                    data=ujson.dumps(data)
                     print(topic)
-                    print(temperature)
+                    print(data)
+                    connect_and_subscribe(topic,data)
                     time.sleep_ms(30)
                     break
                 except:
@@ -145,4 +148,5 @@ try:
     temp_power.value(0)
     machine.deepsleep(900000)
 except:
-    machine.deepsleep(900000)
+    raise
+    #machine.deepsleep(900000)
