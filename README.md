@@ -12,7 +12,7 @@ Included in this project is the custom PCB boards I designed, temperature.py whi
 1. None
 
 <b>Software:</b>
-1. MQTT subversion. Included Simple Github OTA Updater (https://github.com/cj667113/simple_github_ota_updater) that will monitor the repository and install new software after each hard-reset.
+1. MQTT subversion. Included Simple Github OTA Updater (https://github.com/cj667113/simple_github_ota_updater) that will monitor the repository and install new software after each hard-reset. MQTT Version will use JSON Payload to send Datetime ,Temperature and Voltage.
 
 # Micropython
 http://micropython.org/download
